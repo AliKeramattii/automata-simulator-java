@@ -1,0 +1,82 @@
+========================================
+Computation Theory Project
+DFA Simulator and NFA to DFA Converter
+========================================
+1) Phase 1 - DFA Simulator
+2) Phase 2 - NFA to DFA Converter
+Choose phase: 
+========================================
+PHASE 1: DFA SIMULATOR
+========================================
+Enter number of states: Enter states separated by space:
+Enter alphabet symbols separated by space (example: a b):
+Enter number of transitions: Enter transitions in this format: from symbol to
+Example: q0 a q1
+Enter start state: Enter final states separated by space:
+
+========================================
+DFA DEFINITION
+========================================
+M = (Q, Sigma, delta, q0, F)
+Q     = {Even,Odd}
+Sigma = {a,b}
+q0    = Even
+F     = {Even}
+
+DFA Transition Table:
+State          a              b              
+--------------------------------------------------
+Even           Odd            Even           
+Odd            Even           Odd            
+Enter number of test strings: Enter each test string on a separate line.
+For empty string, type: empty
+
+========================================
+DFA SIMULATION TRACE
+========================================
+
+Input string: empty
+Start state: Even
+Final stopped state: Even
+Result: Accept
+
+Input string: a
+Start state: Even
+Even --a--> Odd
+Final stopped state: Odd
+Result: Reject
+
+Input string: aa
+Start state: Even
+Even --a--> Odd
+Odd --a--> Even
+Final stopped state: Even
+Result: Accept
+
+Input string: abba
+Start state: Even
+Even --a--> Odd
+Odd --b--> Odd
+Odd --b--> Odd
+Odd --a--> Even
+Final stopped state: Even
+Result: Accept
+
+Input string: bbb
+Start state: Even
+Even --b--> Even
+Even --b--> Even
+Even --b--> Even
+Final stopped state: Even
+Result: Accept
+
+========================================
+SUMMARY OF TEST STRINGS
+========================================
+String          Result    
+---------------------------
+empty           Accept    
+a               Reject    
+aa              Accept    
+abba            Accept    
+bbb             Accept    

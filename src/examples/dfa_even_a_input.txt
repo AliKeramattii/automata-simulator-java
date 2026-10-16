@@ -1,0 +1,17 @@
+1
+2
+Even Odd
+a b
+4
+Even a Odd
+Even b Even
+Odd a Even
+Odd b Odd
+Even
+Even
+5
+empty
+a
+aa
+abba
+bbb

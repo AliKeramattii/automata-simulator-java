@@ -1,0 +1,98 @@
+========================================
+Computation Theory Project
+DFA Simulator and NFA to DFA Converter
+========================================
+1) Phase 1 - DFA Simulator
+2) Phase 2 - NFA to DFA Converter
+Choose phase: 
+========================================
+PHASE 2: NFA TO DFA CONVERTER
+========================================
+Use eps for epsilon transitions.
+Enter number of NFA states: Enter NFA states separated by space:
+Enter alphabet symbols separated by space, without eps (example: a b):
+Enter number of NFA transitions: Enter transitions in this format: from symbol toStates
+Examples:
+q0 a q0,q1
+q0 eps q2
+Enter NFA start state: Enter NFA final states separated by space:
+
+========================================
+NFA DEFINITION
+========================================
+N = (Q, Sigma, delta, q0, F)
+Q     = {q0,q1,q2}
+Sigma = {a,b}
+q0    = q0
+F     = {q2}
+
+NFA Transition Table:
+State          a              b              eps            
+----------------------------------------------------------------
+q0             {}             {}             {q1}           
+q1             {q2}           {}             {}             
+q2             {q2}           {}             {}             
+
+========================================
+EPSILON-CLOSURE INFORMATION
+========================================
+epsilon-closure(q0) = {q0,q1}
+epsilon-closure(q1) = {q1}
+epsilon-closure(q2) = {q2}
+
+========================================
+SUBSET CONSTRUCTION STEPS
+========================================
+Start DFA state = epsilon-closure(q0) = {q0,q1}
+
+Processing DFA state: {q0,q1}
+  With input a:
+    move({q0,q1}, a) = {q2}
+    epsilon-closure({q2}) = {q2}
+    New DFA state discovered: {q2}
+  With input b:
+    move({q0,q1}, b) = {}
+    epsilon-closure({}) = {}
+    New DFA state discovered: {}
+
+Processing DFA state: {q2}
+  With input a:
+    move({q2}, a) = {q2}
+    epsilon-closure({q2}) = {q2}
+    This DFA state already exists.
+  With input b:
+    move({q2}, b) = {}
+    epsilon-closure({}) = {}
+    This DFA state already exists.
+
+Processing DFA state: {}
+  With input a:
+    move({}, a) = {}
+    epsilon-closure({}) = {}
+    This DFA state already exists.
+  With input b:
+    move({}, b) = {}
+    epsilon-closure({}) = {}
+    This DFA state already exists.
+
+========================================
+NFA TO DFA CONVERSION RESULT
+========================================
+
+DFA States:
+{q0,q1}
+{q2}
+{}  (Dead State)
+
+DFA Start State:
+{q0,q1}
+
+DFA Final States:
+{q2}
+
+DFA Transition Table:
+State               a                   b                   
+--------------------------------------------------------------
+{q0,q1}             {q2}                {}                  
+{q2}                {q2}                {}                  
+{}                  {}                  {}                  

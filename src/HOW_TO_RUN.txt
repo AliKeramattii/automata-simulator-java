@@ -1,0 +1,23 @@
+How to run the project
+======================
+
+1. Open Terminal or Command Prompt in the project folder.
+2. Compile the Java file:
+
+   javac Main.java
+
+3. Run the program:
+
+   java Main
+
+4. Choose the phase:
+
+   1  -> DFA Simulator
+   2  -> NFA to DFA Converter
+
+5. To run the prepared samples:
+
+   java Main < sample_phase1_input.txt
+   java Main < sample_phase2_input.txt
+
+6. Extra examples are available in the examples folder.

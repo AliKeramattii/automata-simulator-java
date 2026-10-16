@@ -1,0 +1,77 @@
+========================================
+Computation Theory Project
+DFA Simulator and NFA to DFA Converter
+========================================
+1) Phase 1 - DFA Simulator
+2) Phase 2 - NFA to DFA Converter
+Choose phase: 
+========================================
+PHASE 1: DFA SIMULATOR
+========================================
+Enter number of states: Enter states separated by space:
+Enter alphabet symbols separated by space (example: a b):
+Enter number of transitions: Enter transitions in this format: from symbol to
+Example: q0 a q1
+Enter start state: Enter final states separated by space:
+
+========================================
+DFA DEFINITION
+========================================
+M = (Q, Sigma, delta, q0, F)
+Q     = {q0,q1}
+Sigma = {a,b}
+q0    = q0
+F     = {q1}
+
+DFA Transition Table:
+State          a              b              
+--------------------------------------------------
+q0             q0             q1             
+q1             q0             q1             
+Enter number of test strings: Enter each test string on a separate line.
+For empty string, type: empty
+
+========================================
+DFA SIMULATION TRACE
+========================================
+
+Input string: abab
+Start state: q0
+q0 --a--> q0
+q0 --b--> q1
+q1 --a--> q0
+q0 --b--> q1
+Final stopped state: q1
+Result: Accept
+
+Input string: abba
+Start state: q0
+q0 --a--> q0
+q0 --b--> q1
+q1 --b--> q1
+q1 --a--> q0
+Final stopped state: q0
+Result: Reject
+
+Input string: bbb
+Start state: q0
+q0 --b--> q1
+q1 --b--> q1
+q1 --b--> q1
+Final stopped state: q1
+Result: Accept
+
+Input string: empty
+Start state: q0
+Final stopped state: q0
+Result: Reject
+
+========================================
+SUMMARY OF TEST STRINGS
+========================================
+String          Result    
+---------------------------
+abab            Accept    
+abba            Reject    
+bbb             Accept    
+empty           Reject    
